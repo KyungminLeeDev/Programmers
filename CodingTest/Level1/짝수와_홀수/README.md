@@ -35,3 +35,12 @@ func solution(_ num:Int) -> String {
 }
 ~~~
 <br/>
+
+
+## 제출한 코드
+~~~swift
+func solution(_ num:Int) -> String {
+    return ((num & 1) == 1) ? "Odd" : "Even"  
+}
+~~~
+<br/>
