@@ -41,5 +41,21 @@ func solution(_ arr:[Int]) -> [Int] {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ arr:[Int]) -> [Int] {
+    var temp = [Int]()
+    guard arr.count > 1 else{
+        temp.append(-1)
+        return temp
+    }
 
+    let min = arr.min()
+
+    for i in arr {
+        if i != min {
+            temp.append(i)
+        }
+    }
+
+    return temp
+}
 ~~~
