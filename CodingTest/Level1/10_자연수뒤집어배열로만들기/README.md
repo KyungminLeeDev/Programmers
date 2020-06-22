@@ -39,6 +39,32 @@ func solution(_ n:Int64) -> [Int] {
 
 ## 제출한 코드  
 
+- 처음 제출한 코드  
 ~~~swift
+func solution(_ n:Int64) -> [Int] {
+    var div = 1
+    var arr = [Int]()
 
+    while n > div {
+        arr.append((Int(n) % (div * 10)) / div)
+        div *= 10
+    }
+
+    return arr
+}
+~~~
+
+- 다른 사람의 풀이 참고한 후 수정한 코드  
+~~~swift
+func solution(_ n:Int64) -> [Int] {
+    var num = Int(n)
+    var arr = [Int]()
+
+    while num > 0 {
+        arr.append(num % 10)
+        num /= 10
+    }
+
+    return arr
+}
 ~~~
