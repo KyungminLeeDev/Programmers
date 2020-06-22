@@ -39,7 +39,7 @@ func solution(_ n:Int64) -> [Int] {
 
 ## 제출한 코드  
 
-- 처음 제출한 코드  
+### 처음 제출한 코드  
 ~~~swift
 func solution(_ n:Int64) -> [Int] {
     var div = 1
@@ -54,7 +54,7 @@ func solution(_ n:Int64) -> [Int] {
 }
 ~~~
 
-- 다른 사람의 풀이 참고한 후 수정한 코드  
+### 다른 사람의 풀이 참고한 후 수정한 코드  
 ~~~swift
 func solution(_ n:Int64) -> [Int] {
     var num = Int(n)

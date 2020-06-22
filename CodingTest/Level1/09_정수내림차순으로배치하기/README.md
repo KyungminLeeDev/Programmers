@@ -40,7 +40,7 @@ func solution(_ n:Int64) -> Int64 {
 
 ## 제출한 코드  
 
-- 처음 제출한 코드  
+### 처음 제출한 코드  
 ~~~swift
 func solution(_ n:Int64) -> Int64 {
     var arr = [Int64]()
@@ -65,7 +65,7 @@ func solution(_ n:Int64) -> Int64 {
 }
 ~~~
 
-- 다른 사람의 풀이 참고한 후 수정한 코드
+### 다른 사람의 풀이 참고한 후 수정한 코드
 ~~~swift
 func solution(_ n:Int64) -> Int64 {
     var arr = [Int64]()
