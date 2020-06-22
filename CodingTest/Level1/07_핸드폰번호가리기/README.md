@@ -41,5 +41,18 @@ func solution(_ phone_number:String) -> String {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ phone_number:String) -> String {
+    let count = phone_number.count - 4
+    var temp: String = ""
 
+    for (index, value) in phone_number.enumerated() {
+        if index < count {
+            temp.append("*")
+        } else {
+            temp.append(value)
+        }
+    }
+
+    return temp
+}
 ~~~
