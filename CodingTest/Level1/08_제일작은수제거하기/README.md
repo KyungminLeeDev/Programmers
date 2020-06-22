@@ -31,7 +31,7 @@
 ## 주어진 코드  
 
 ~~~swift
-func solution(_ n:Int64) -> Int64 {
+func solution(_ arr:[Int]) -> [Int] {
     return 0  
 }
 ~~~
@@ -39,51 +39,23 @@ func solution(_ n:Int64) -> Int64 {
 
 
 ## 제출한 코드  
-
-### 처음 제출한 코드  
+  
 ~~~swift
-func solution(_ n:Int64) -> Int64 {
-    var arr = [Int64]()
-    var div: Int64 = 0
-    var num: Int64 = 0
-
-    div = 1
-    while div < n {
-        arr.append((n % (div * 10)) / div)
-        div *= 10
+func solution(_ arr:[Int]) -> [Int] {
+    var temp = [Int]()
+    guard arr.count > 1 else{
+        temp.append(-1)
+        return temp
     }
-    arr.sort()
 
+    let min = arr.min()
 
-    div = 1
     for i in arr {
-        num += (i * div)
-        div *= 10
+        if i != min {
+            temp.append(i)
+        }
     }
 
-    return num
-}
-~~~
-
-### 다른 사람의 풀이 참고한 후 수정한 코드
-~~~swift
-func solution(_ n:Int64) -> Int64 {
-    var arr = [Int64]()
-    var num = n
-
-    while num > 0 {
-        arr.append(num % 10)
-        num /= 10
-    }
-    arr.sort()
-
-    num = 0
-    var div = 1
-    for i in arr {
-        num += (i * Int64(div))
-        div *= 10
-    }
-
-    return num
+    return temp
 }
 ~~~

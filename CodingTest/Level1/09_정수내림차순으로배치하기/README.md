@@ -39,6 +39,7 @@ func solution(_ n:Int64) -> Int64 {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드  
 ~~~swift
 func solution(_ n:Int64) -> Int64 {
     var arr = [Int64]()
@@ -56,6 +57,29 @@ func solution(_ n:Int64) -> Int64 {
     div = 1
     for i in arr {
         num += (i * div)
+        div *= 10
+    }
+
+    return num
+}
+~~~
+
+### 다른 사람의 풀이 참고한 후 수정한 코드
+~~~swift
+func solution(_ n:Int64) -> Int64 {
+    var arr = [Int64]()
+    var num = n
+
+    while num > 0 {
+        arr.append(num % 10)
+        num /= 10
+    }
+    arr.sort()
+
+    num = 0
+    var div = 1
+    for i in arr {
+        num += (i * Int64(div))
         div *= 10
     }
 
