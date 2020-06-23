@@ -38,7 +38,22 @@ func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
 
 
 ## 제출한 코드  
-  
-~~~swift
 
+### 처음 제출한 코드  
+~~~swift
+func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
+    var arrSum = [[Int]]()
+
+    for i in 0..<arr1.count {
+        var temp = [Int]()
+        for j in 0..<arr1[i].count {
+            temp.append(arr1[i][j] + arr2[i][j])
+        }
+        arrSum.append(temp)
+    }
+
+    return arrSum
+}
 ~~~
+
+### 다른 사람의 풀이 참고한 후 수정한 코드
