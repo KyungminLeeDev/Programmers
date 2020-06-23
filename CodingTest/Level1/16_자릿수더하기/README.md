@@ -57,13 +57,18 @@ func solution(_ n:Int) -> Int
 
 
 ## 제출한 코드  
-
-### 처음 제출한 코드   
+  
 ~~~swift
+func solution(_ n:Int) -> Int
+{
+    var answer = 0
+    var num = n
 
-~~~
+    while num > 0 {
+        answer += num % 10
+        num /= 10
+    }
 
-### 다른 사람의 풀이 참고 후 수정한 코드
-~~~Swift
-
+    return answer
+}
 ~~~
