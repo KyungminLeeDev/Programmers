@@ -58,6 +58,7 @@ func solution(_ x:Int) -> Bool {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드   
 ~~~swift
 func solution(_ x:Int) -> Bool {
     var num = x
@@ -74,5 +75,20 @@ func solution(_ x:Int) -> Bool {
     }
 
     return (x % num) == 0 ? true : false
+}
+~~~
+
+### 다른 사람의 풀이 참고 후 수정한 코드
+~~~Swift
+func solution(_ x:Int) -> Bool {
+    var num = x
+    var sum = 0
+
+    while num > 0 {
+        sum += (num % 10)
+        num /= 10
+    }
+
+    return x % sum == 0
 }
 ~~~

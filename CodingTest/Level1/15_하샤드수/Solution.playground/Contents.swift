@@ -1,18 +1,13 @@
 func solution(_ x:Int) -> Bool {
     var num = x
-    var arr = [Int]()
+    var sum = 0
     
     while num > 0 {
-        arr.append(num % 10)
+        sum += (num % 10)
         num /= 10
     }
     
-    num = 0
-    for i in arr {
-        num += i
-    }
-    
-    return (x % num) == 0 ? true : false
+    return x % sum == 0
 }
 
 print(solution(10))
