@@ -59,5 +59,20 @@ func solution(_ x:Int) -> Bool {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ x:Int) -> Bool {
+    var num = x
+    var arr = [Int]()
 
+    while num > 0 {
+        arr.append(num % 10)
+        num /= 10
+    }
+
+    num = 0
+    for i in arr {
+        num += i
+    }
+
+    return (x % num) == 0 ? true : false
+}
 ~~~
