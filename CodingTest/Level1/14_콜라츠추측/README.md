@@ -60,12 +60,24 @@ func solution(_ num:Int) -> Int {
 
 ## 제출한 코드  
 
-### 처음 제출한 코드
 ~~~swift
+func solution(_ num:Int) -> Int {
+    var value = num
+    var count = 0
 
-~~~
+    while value > 1 {
+        if (value & 1) == 0 { // Even
+            value /= 2
+        } else { // Odd
+            value = (value * 3) + 1
+        }
+        count += 1
+        if count == 500 {
+            count = -1
+            break
+        }
+    }
 
-### 다른 사람의 풀이 참고한 후 수정한 코드
-~~~swift
-
+    return count
+}
 ~~~
