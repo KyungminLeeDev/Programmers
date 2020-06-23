@@ -25,7 +25,7 @@
 | 3  | 12  | [3, 12] |
 | 2  | 5   | [1, 10] |
 
-## 입출력 예 설명  
+### 입출력 예 설명  
 입출력 예 #1
 위의 설명과 같습니다.
 
@@ -43,7 +43,7 @@ func solution(_ n:Int, _ m:Int) -> [Int] {
 
 
 ## 제출한 코드  
- 
+
 ~~~swift
 func solution(_ n:Int, _ m:Int) -> [Int] {
     var max = 0
