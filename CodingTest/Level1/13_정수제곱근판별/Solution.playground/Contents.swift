@@ -1,0 +1,12 @@
+import Foundation
+
+func solution(_ n:Int64) -> Int64 {
+    let x = Int64(sqrt(Double(n)))
+    
+    return (x * x == n) ? ((x + 1) * (x + 1)) : -1
+}
+
+print(solution(121))
+print(solution(3))
+print(solution(1))
+

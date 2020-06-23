@@ -51,6 +51,33 @@ func solution(_ n:Int64) -> Int64 {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드
 ~~~swift
+func solution(_ n:Int64) -> Int64 {
+    var x: Int64 = 0
+    var r: Int64 = -1
 
+    while (x * x) < n {
+        x += 1
+        if (x * x) == n {
+            x += 1
+            x *= x
+            r = x
+            break
+        }
+    }
+
+    return r
+}
+~~~
+
+### 다른 사람의 풀이 참고한 후 수정한 코드
+~~~swift
+import Foundation
+
+func solution(_ n:Int64) -> Int64 {
+    let x = Int64(sqrt(Double(n)))
+
+    return (x * x == n) ? ((x + 1) * (x + 1)) : -1
+}
 ~~~
