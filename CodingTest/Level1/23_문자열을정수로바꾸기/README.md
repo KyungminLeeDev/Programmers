@@ -42,5 +42,7 @@ func solution(_ s:String) -> Int {
 ## 제출한 코드  
 
 ~~~swift
-
+func solution(_ s:String) -> Int {
+    return Int(s)!
+}
 ~~~
