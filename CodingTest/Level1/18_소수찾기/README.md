@@ -48,8 +48,63 @@ func solution(_ n:Int) -> Int {
 
 
 
+## Think
+> 에라토스테네스의 체
+~~~
+1. 찾아내고 싶은 범위만큼 자연수를 죽 늘어놓는다.
+2. 1은 수학적으로 소수도, 합성수도 아닌 유일한 자연수이므로 먼저 1을 지운다.
+3. 먼저 2를 소수로 표시하고 2를 제외한 2의 배수(4, 6, 8, ...)를 모두[9] 소거한다.
+4. 그 다음 3을 소수로 표시하고 남아있는 수 중 3을 제외한 3의 배수(9, 15, 21, ...)도 모두[10] 소거한다.
+5. 그 다음 5를 소수로 표시하고 남아있는 수 중 5를 제외한 5의 배수(25, 35, 55, ...)도 모두[11] 소거한다.
+6. 그 다음 7을 소수로 표시하고 남아있는 수 중 7을 제외한 7의 배수(49, 77, 91, ...)도 모두[12] 소거한다.
+7. 남아있는 가장 작은 수(소수)에 대해 이 과정을 \sqrt(n) 보다 작거나 같은 소수까지 계속 반복한다.
+이렇게 하다 보면 n보다 작은 소수만 남는다.
+~~~
+[출처](https://namu.wiki/w/%EC%86%8C%EC%88%98(%EC%88%98%EB%A1%A0)#s-5)
+
+
+
+
 ## 제출한 코드  
 
 ~~~swift
+import Foundation
 
+func solution(_ n:Int) -> Int {
+    var arr = [Int]()
+    arr.append(contentsOf: stride(from: 0, to: n + 1, by: 1))
+    arr[1] = 0
+
+    if n == 2 {
+        return 1
+    }
+
+    for i in 2...Int(sqrt(Double(n))) {
+        if isPrimeNumber(i) {
+            var count = 2
+            while i * count <= n {
+                arr[i * count] = 0
+                count += 1
+            }
+        }
+    }
+
+    var count = 0
+    for i in arr {
+        if i != 0 {
+            count += 1
+        }
+    }
+
+    return count
+}
+
+func isPrimeNumber(_ n: Int) -> Bool {
+    for i in 2..<n {
+        if n % i == 0 {
+            return false
+        }
+    }
+    return true
+}
 ~~~
