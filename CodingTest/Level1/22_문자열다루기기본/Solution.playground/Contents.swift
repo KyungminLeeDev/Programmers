@@ -1,0 +1,10 @@
+func solution(_ s:String) -> Bool {
+    guard s.count == 4 || s.count == 6 else {
+        return false
+    }
+    
+    return Int(s) == nil ? false : true
+}
+
+print(solution("a234"))
+print(solution("1234"))
