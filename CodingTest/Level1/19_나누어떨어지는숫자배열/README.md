@@ -59,5 +59,19 @@ func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
+    var result: [Int] = [-1]
 
+    for i in arr {
+        if i % divisor == 0 {
+            result.append(i)
+        }
+    }
+
+    if result.count > 1 {
+         result.remove(at: 0)
+    }
+
+    return result.sorted()
+}
 ~~~
