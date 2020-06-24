@@ -1,27 +1,30 @@
 import Foundation
 
 func solution(_ n:Int) -> Int {
-    var arr = [Int]()
-    arr.append(contentsOf: stride(from: 0, to: n + 1, by: 1))
-    arr[1] = 0
+    var arr = [Bool](repeating: true, count: n + 1)
+    arr[0] = false // 0 제외
+    arr[1] = false // 1 제외
     
+    // 입력값 2면 바로 1 반환 (에라토스테네스의 체 연산 제외)
     if n == 2 {
         return 1
     }
     
+    // 에라토스테네스의 체
     for i in 2...Int(sqrt(Double(n))) {
         if isPrimeNumber(i) {
             var count = 2
             while i * count <= n {
-                arr[i * count] = 0
+                arr[i * count] = false
                 count += 1
             }
         }
     }
        
+    // 파악된 소수 개수 카운팅
     var count = 0
     for i in arr {
-        if i != 0 {
+        if i == true {
             count += 1
         }
     }
@@ -29,6 +32,7 @@ func solution(_ n:Int) -> Int {
     return count
 }
 
+// 소수인지 판단
 func isPrimeNumber(_ n: Int) -> Bool {
     for i in 2..<n {
         if n % i == 0 {
