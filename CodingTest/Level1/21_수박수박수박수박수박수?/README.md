@@ -20,9 +20,9 @@
 
 ## 입출력 예  
 
-| n | return   |
-| - | -------- |
-| 3 | "수박수"  |
+| n | return     |
+| - | ---------- |
+| 3 | "수박수"   |
 | 4 | "수박수박" |
 
 
@@ -42,5 +42,17 @@ func solution(_ n:Int) -> String {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ n:Int) -> String {
+    var str: String = ""
 
+    for i in 1...n {
+        if (i & 1) == 1 {
+            str.append("수")
+        } else {
+            str.append("박")
+        }
+    }
+
+    return str
+}
 ~~~
