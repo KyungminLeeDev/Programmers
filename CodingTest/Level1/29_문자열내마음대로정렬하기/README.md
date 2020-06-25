@@ -27,7 +27,7 @@
 | strings               | n | return                |
 | --------------------- | - | --------------------- |
 | ["sun","bed","car"]   | 1 | ["car","bed","sun"]   |
-| ["abce","abcd","cdx"] | 2 | ["abcd","abce","cdx"] |      |
+| ["abce","abcd","cdx"] | 2 | ["abcd","abce","cdx"] |
 
 ### 입출력 예 설명  
 입출력 예 1 <br/>
