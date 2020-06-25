@@ -38,13 +38,9 @@ func solution(_ s:String) -> String {
 
 
 ## 제출한 코드  
-
-### 처음 제출한 코드   
+   
 ~~~swift
-
-~~~
-
-### 다른 사람의 풀이 참고 후 수정한 코드   
-~~~swift
-
+func solution(_ s:String) -> String {
+    return String(s.sorted(by: >))
+}
 ~~~
