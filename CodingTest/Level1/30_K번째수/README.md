@@ -57,5 +57,18 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+    var result = [Int]()
 
+    for i in commands {
+        let start = i[0] - 1
+        let end = i[1] - 1
+        let k = i[2] - 1
+        let temp = array[start...end].sorted()
+
+        result.append(temp[k])
+    }
+
+    return result
+}
 ~~~
