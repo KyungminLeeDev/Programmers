@@ -40,6 +40,23 @@ func solution(_ seoul:[String]) -> String {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드   
 ~~~swift
+func solution(_ seoul:[String]) -> String {
+    var result = ""
+    for (index, str) in seoul.enumerated() {
+        if str == "Kim" {
+            result = "김서방은 \(index)에 있다"
+        }
+    }
 
+    return result
+}
+~~~
+
+### 다른 사람의 풀이 참고 후 수정한 코드   
+~~~swift
+func solution(_ seoul:[String]) -> String {
+    return "김서방은 \(seoul.firstIndex(of: "Kim")!)에 있다"
+}
 ~~~
