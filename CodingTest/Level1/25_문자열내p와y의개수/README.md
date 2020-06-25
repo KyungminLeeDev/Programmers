@@ -1,4 +1,4 @@
-# 24. 문자열 내 p와 y의 개수      
+# 25. 문자열 내 p와 y의 개수      
 
 - 출처: [프로그래머스 코딩 테스트 연습](https://programmers.co.kr/learn/challenges)
 - 난이도: 레벨1
