@@ -78,7 +78,7 @@ func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
 
 ## 제출한 코드  
 
-- 테스트 케이스 3개 시간초과로 통과 못함
+- 테스트 케이스 5, 9, 22번 시간초과로 통과 못함
 - Swift의 sort 함수 속도 문제. 다른 방법 사용해야함   
 
 ~~~swift
