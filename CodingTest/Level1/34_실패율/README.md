@@ -78,6 +78,61 @@ func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
 
 ## 제출한 코드  
 
-~~~swift
+- 테스트 케이스 3개 시간초과로 통과 못함
+- Swift의 sort 함수 속도 문제. 다른 방법 사용해야함   
 
+~~~swift
+// 실패율 계산
+func calcFailRate(_ notClearPlayers: Int, _ stagePlayers: Int) -> Double {
+    guard notClearPlayers != 0 else {
+        return 0
+    }
+    guard stagePlayers != 0 else {
+        return 1
+    }
+    return Double(notClearPlayers) / Double(stagePlayers)
+}
+
+// 지정한 스테이지까지 도달했으나 아직 클리어하지 못한 사용자의 수 카운팅
+func countNotClearPlayers(_ stageNum: Int, _ stages: [Int]) -> Int {
+    var count = 0
+
+    for s in stages {
+        if s == stageNum {
+            count += 1
+        }
+    }
+
+    return count
+}
+
+// 지정한 스테이지까지 도달한 사용자의 수 카운팅
+func countStagePlayers(_ stageNum: Int, _ stages: [Int]) -> Int {
+    var count = 0
+
+    for s in stages {
+        if s >= stageNum {
+            count += 1
+        }
+    }
+
+    return count
+}
+
+func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+    var stageList = [Int:Double]()
+
+    for i in 1...N {
+        let stagePlayers = countStagePlayers(i, stages)
+        let notClearPlayers = countNotClearPlayers(i, stages)
+        let failRate = calcFailRate(notClearPlayers, stagePlayers)
+
+        stageList[i] = failRate
+    }
+
+    // 키 값으로 먼저 오름차순 정렬후 밸류 값으로 내림차순 정렬
+    let sorted = stageList.sorted(by: <).sorted(by: {$0.value > $1.value})
+
+    return sorted.map { $0.key }
+}
 ~~~
