@@ -63,8 +63,21 @@ func solution(_ d:[Int], _ budget:Int) -> Int {
 
 ## 제출한 코드  
 
-
-
 ~~~swift
+func solution(_ d:[Int], _ budget:Int) -> Int {
+    var departments = d
+    var sum = 0
+    var count = 0
 
+    departments.sort()
+
+    for i in departments {
+        if sum + i <= budget {
+            sum += i
+            count += 1
+        }
+    }
+
+    return count
+}
 ~~~
