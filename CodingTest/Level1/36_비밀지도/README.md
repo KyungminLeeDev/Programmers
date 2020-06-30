@@ -76,16 +76,16 @@ func solution(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
         let temp = arr1[i] | arr2[i]
         var str = ""
         var x = 1
-        var count = 0
+
         // 1, 2, 4, 8, 16, 32...
-        while count < n {
+        for _ in 0..<n {
             if (temp & x) == x {
                 str = "#" + str
             } else {
                 str = " " + str
             }
-            x = x * 2
-            count += 1
+
+            x = x << 1
         }
         answer.append(str)
     }
