@@ -1,4 +1,4 @@
-# LV1 - 35. 예산 (Summer/Winter Coding(~2018))
+# 35. 예산 (Summer/Winter Coding(~2018))
 
 - 출처: [프로그래머스 코딩 테스트 연습](https://programmers.co.kr/learn/challenges)
 - 난이도: 레벨1
