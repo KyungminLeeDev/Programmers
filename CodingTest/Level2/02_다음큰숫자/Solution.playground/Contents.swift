@@ -1,30 +1,15 @@
-func countBinaryOne(_ n: Int) -> Int {
-    var count: Int = 0
-    
-    for b in 0..<n.bitWidth {
-        if n & (1 << b) == (1 << b) {
-            count += 1
-        }
-    }
-    
-    return count
-}
-
 func solution(_ n:Int) -> Int
 {
-    let countN = countBinaryOne(n)
-    var number = n
-    var result = 0
+    var result: Int = n + 1
 
-    while number < Int.max {
-        number += 1
-        
-        if countN == countBinaryOne(number) {
-            result = number
+    while result <= Int.max {
+        if n.nonzeroBitCount == result.nonzeroBitCount {
             break
         }
+        
+        result += 1
     }
-    
+        
     return result
 }
 

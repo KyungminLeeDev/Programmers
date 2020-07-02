@@ -61,6 +61,8 @@ func solution(_ n:Int) -> Int
 
 ## 제출한 코드  
 
+### 처음 제출한 코드   
+
 ~~~swift
 func countBinaryOne(_ n: Int) -> Int {
     var count: Int = 0
@@ -87,6 +89,25 @@ func solution(_ n:Int) -> Int
             result = number
             break
         }
+    }
+
+    return result
+}
+~~~
+
+### 다른 사람의 풀이 참고 후 수정한 코드
+
+~~~swift
+func solution(_ n:Int) -> Int
+{
+    var result: Int = n + 1
+
+    while result <= Int.max {
+        if n.nonzeroBitCount == result.nonzeroBitCount {
+            break
+        }
+
+        result += 1
     }
 
     return result
