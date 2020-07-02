@@ -1,4 +1,4 @@
-# LV2 - 01. 가장 큰 정사각형 찾기     
+# 01. 가장 큰 정사각형 찾기     
 
 - 출처: [프로그래머스 코딩 테스트 연습](https://programmers.co.kr/learn/challenges)
 - 난이도: 레벨2
