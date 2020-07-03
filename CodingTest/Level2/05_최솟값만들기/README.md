@@ -72,5 +72,17 @@ func solution(_ A:[Int], _ B:[Int]) -> Int
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ A:[Int], _ B:[Int]) -> Int
+{
+    var ans = 0
 
+    let a = A.sorted() // 오름차순
+    let b = B.sorted(by: >) // 내림차순
+
+    for i in 0..<a.count {
+        ans += a[i] * b[i]
+    }
+
+    return ans
+}
 ~~~
