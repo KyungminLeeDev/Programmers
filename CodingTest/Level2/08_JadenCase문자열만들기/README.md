@@ -35,10 +35,44 @@ func solution(_ s:String) -> String {
 }
 ~~~
 
+## Think
 
+- 공백이 여러개 이어져 있을 수 있고 리턴값에도 그 공백 그대로 유지해야 함.
+- split 함수로 공백기준으로 나눈다면 여러개 공백이 하나의 공백으로 되서 케이스 통과 못 함. 
 
 ## 제출한 코드  
 
 ~~~swift
+import Foundation
 
+func solution(_ s:String) -> String {
+    var first = true
+    var result = ""
+
+    for c in s {
+        // 공백은 그냥 넘어감
+        if c == " " {
+            result += " "
+            first = true
+            continue
+        }
+
+        if first {
+            if let test = Int(String(c)) {
+                // 첫 문자가 숫자라면 대문자 변환 안함
+                result += String(c)
+            } else {
+                // 문자라면 대문자로 변혼
+                result += String(c).uppercased()
+            }
+            first = false
+        } else {
+            // 첫 문자아니면 소문자로 변환
+            result += String(c).lowercased()
+        }
+
+    }
+
+    return result
+}
 ~~~
