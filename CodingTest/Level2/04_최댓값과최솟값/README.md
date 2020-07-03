@@ -42,5 +42,15 @@ func solution(_ s:String) -> String {
 ## 제출한 코드  
 
 ~~~swift
+func solution(_ s:String) -> String {
+    let str = s.split(separator: " ") // 공백으로 문자열 나눔
+    let numbers = str.map { Int($0)! } // 정수로 변환
+    var answer = ""
 
+    answer += String(numbers.min()!)
+    answer += " "
+    answer += String(numbers.max()!)
+
+    return  answer
+}
 ~~~
