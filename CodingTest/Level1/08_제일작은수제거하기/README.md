@@ -39,7 +39,7 @@ func solution(_ arr:[Int]) -> [Int] {
 
 
 ## 제출한 코드  
-  
+
 ~~~swift
 func solution(_ arr:[Int]) -> [Int] {
     var temp = [Int]()
@@ -57,5 +57,21 @@ func solution(_ arr:[Int]) -> [Int] {
     }
 
     return temp
+}
+~~~
+
+
+
+## 다시 푼 코드 
+
+~~~swift
+func solution(_ arr:[Int]) -> [Int] {
+    var result = arr
+    if let min = result.min() {
+        let idx = result.firstIndex(of: min)!
+        result.remove(at: idx)
+    }
+
+    return result.isEmpty ? [-1] : result
 }
 ~~~
