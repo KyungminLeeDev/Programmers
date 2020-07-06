@@ -46,6 +46,29 @@ func solution(_ numbers:[Int]) -> String {
 
 ## 제출한 코드  
 
-~~~swift
+- 1시간 동안 풀어도 모르겠어서 다른 사람의 풀이 참고했다.
 
+~~~swift
+func solution(_ numbers:[Int]) -> String {
+    let temp = numbers.map { String($0) }
+    let result = temp.sorted {$0 + $1 > $1 + $0}
+
+    guard result[0] != "0" else {
+        return "0"
+    }
+
+    return result.joined()
+}
+~~~
+
+
+## 새로 배운 것
+
+### 문자열 배열을 하나의 문자열로 합치기 - joined()
+
+~~~swift
+let arrHello = ["Hello", "World", "!"]
+var hello = arrHello.joined() // "HelloWorld!"
+hello = arrHello.joined(separator: " ") // Hello World !
+hello = arrHello.joined(separator: ", ") // Hello, World, !
 ~~~
