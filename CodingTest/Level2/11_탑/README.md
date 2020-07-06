@@ -76,5 +76,61 @@ func solution(_ heights:[Int]) -> [Int] {
 ## 제출한 코드  
 
 ~~~swift
+import Foundation
 
+func solution(_ heights:[Int]) -> [Int] {
+    var result = Array(repeating: 0, count: heights.count)
+
+    for i in (0..<heights.count).reversed() {
+        for j in (0..<i).reversed() {
+            if heights[i] < heights[j] {
+                result[i] = j + 1 // 탑 번호는 인덱스 +1
+                break
+            }
+        }
+    }
+
+    return result
+}
+~~~
+
+
+
+## 새로 알게된 것
+
+### 배열 역순으로 순회
+
+~~~swift
+var arr = [1, 2, 3]
+
+for i in (0..<arr.count).reversed() {
+    print(arr[i])
+}
+~~~
+
+### 배열 거꾸로 출력 - revesed()
+
+~~~swift
+var arr = [1, 2, 3]
+var arrReversed = arr.reversed()
+
+// 순회 참조 가능
+for n in arrReversed {
+    print(n)
+}
+
+//arrReversed[0] // 참조 불가
+~~~
+
+
+~~~swift
+var arr = [1, 2, 3]
+var arrReversed = Array(arr.reversed()) // 배열로 형변환
+
+// 순회 참조 가능
+for n in arrReversed {
+    print(n)
+}
+
+arrReversed[0] // 참조 가능
 ~~~
