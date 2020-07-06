@@ -119,18 +119,18 @@ for n in arrReversed {
     print(n)
 }
 
-//arrReversed[0] // 참조 불가
+//arrReversed[0] // 직접 참조 불가
 ~~~
 
 
 ~~~swift
 var arr = [1, 2, 3]
-var arrReversed = Array(arr.reversed()) // 배열로 형변환
+arr.reverse() // 배열 자체를 거꾸로 만들면
 
 // 순회 참조 가능
-for n in arrReversed {
+for n in arr {
     print(n)
 }
 
-arrReversed[0] // 참조 가능
+arr[0] // 직접 참조 가능
 ~~~
