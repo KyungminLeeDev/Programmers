@@ -96,7 +96,7 @@ func solution(_ heights:[Int]) -> [Int] {
 
 
 
-## 새로 알게된 것
+## 새로 배운 것 
 
 ### 배열 역순으로 순회
 
@@ -108,7 +108,7 @@ for i in (0..<arr.count).reversed() {
 }
 ~~~
 
-### 배열 거꾸로 출력 - revesed()
+### 9-5 배열 거꾸로 출력 - revesed()
 
 ~~~swift
 var arr = [1, 2, 3]
@@ -119,18 +119,18 @@ for n in arrReversed {
     print(n)
 }
 
-//arrReversed[0] // 직접 참조 불가
+//arrReversed[0] // 참조 불가
 ~~~
 
 
 ~~~swift
 var arr = [1, 2, 3]
-arr.reverse() // 배열 자체를 거꾸로 만들면
+var arrReversed = Array(arr.reversed()) // 배열로 형변환
 
 // 순회 참조 가능
-for n in arr {
+for n in arrReversed {
     print(n)
 }
 
-arr[0] // 직접 참조 가능
+arrReversed[0] // 참조 가능
 ~~~
