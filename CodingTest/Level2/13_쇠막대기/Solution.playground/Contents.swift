@@ -2,7 +2,7 @@ func solution(_ arrangement:String) -> Int {
     let arr = Array(arrangement)
     var count = 0
     var result = 0
-    
+
     for (i, v) in arr.enumerated() {
         if v == "(" {
             // 괄호 열 때 카운트 +1
@@ -19,7 +19,7 @@ func solution(_ arrangement:String) -> Int {
             }
         }
     }
-        
+
     return result
 }
 
