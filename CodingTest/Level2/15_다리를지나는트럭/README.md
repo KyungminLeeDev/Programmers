@@ -79,7 +79,7 @@ func solution(_ bridge_length:Int, _ weight:Int, _ truck_weights:[Int]) -> Int {
                 w += trucks.removeFirst() // 트럭 진입
                 bridge.append(t) // 트럭 진입 완료
             } else {
-                // 견딜 수 업으면 트럭 대기하고 빈공간만 보낸다.
+                // 견딜 수 없으면 트럭 대기하고 빈공간만 보낸다.
                 bridge.append(0)
             }
         }
