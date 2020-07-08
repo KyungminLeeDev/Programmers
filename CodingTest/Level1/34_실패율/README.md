@@ -78,6 +78,8 @@ func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드
+
 - 테스트 케이스 5, 9, 22번 시간초과로 통과 못함
 - Swift의 sort 함수 속도 문제. 다른 방법 사용해야함   
 
@@ -134,5 +136,32 @@ func solution(_ N:Int, _ stages:[Int]) -> [Int] {
     let sorted = stageList.sorted(by: <).sorted(by: {$0.value > $1.value})
 
     return sorted.map { $0.key }
+}
+~~~
+
+### 다른 사람의 풀이 참고 후 수정한 코드  
+
+~~~swift
+func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+    var fail:Dictionary = [Int:Double]()
+
+    // 실패율 계산 후 저장
+    for i in 1...N{
+        // 도달한 수
+        let a = stages.filter{$0 >= i}.count
+
+        // 클리어한 수
+        let b = a - stages.filter{$0 > i}.count
+
+        // 실패율
+        let failCount = Double(b) / Double(a)
+
+        fail[i] = failCount
+    }
+
+    // 실패율이 높은 순서대로 내림차순 숫자 등록, 실패율이 같으면 오름차순
+    let failSorted = fail.sorted(by: <).sorted(by: {$0.value > $1.value})
+
+    return failSorted.map{$0.key}
 }
 ~~~
