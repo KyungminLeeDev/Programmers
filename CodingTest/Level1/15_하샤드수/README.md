@@ -90,3 +90,13 @@ func solution(_ x:Int) -> Bool {
     return x % sum == 0
 }
 ~~~
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ x:Int) -> Bool {
+    let n = Array(String(x)).map({Int(String($0))!}).reduce(0, +)
+
+    return x % n == 0 ? true : false
+}
+~~~
