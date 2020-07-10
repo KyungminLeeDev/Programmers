@@ -40,6 +40,7 @@ func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
 ## 제출한 코드  
 
 ### 처음 제출한 코드  
+
 ~~~swift
 func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
     var arrSum = [[Int]]()
@@ -56,7 +57,8 @@ func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
 }
 ~~~
 
-### 다른 사람의 풀이 참고한 후 수정한 코드  
+### 다른 사람의 풀이 참고한 후 수정한 코드
+
 ~~~swift
 func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
     var arrSum = arr1
@@ -70,3 +72,19 @@ func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
     return arrSum
 }
 ~~~   
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
+    var result = arr1
+
+    for i in 0..<arr1.count {
+        for j in 0..<arr1[i].count {
+            result[i][j] += arr2[i][j]
+        }
+    }
+
+    return result
+}
+~~~
