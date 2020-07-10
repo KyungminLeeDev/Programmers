@@ -56,6 +56,8 @@ func solution(_ n:Int) -> Int
 
 ## 제출한 코드  
 
+### 처음 제출한 코드
+
 ~~~swift
 func solution(_ n:Int) -> Int
 {
@@ -68,5 +70,13 @@ func solution(_ n:Int) -> Int
     }
 
     return answer
+}
+~~~
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ n:Int) -> Int {
+    return Array(String(n)).map({Int(String($0))!}).reduce(0, +)
 }
 ~~~
