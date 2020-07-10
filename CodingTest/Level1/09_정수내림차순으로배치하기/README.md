@@ -86,3 +86,12 @@ func solution(_ n:Int64) -> Int64 {
     return num
 }
 ~~~
+
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ n:Int64) -> Int64 {
+    return Int64(String(Array(String(n)).sorted(by: >)))!
+}
+~~~
