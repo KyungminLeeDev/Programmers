@@ -58,6 +58,7 @@ func solution(_ num:Int) -> Int {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드
 ~~~swift
 func solution(_ num:Int) -> Int {
     var value = num
@@ -73,6 +74,25 @@ func solution(_ num:Int) -> Int {
         if count == 500 {
             count = -1
             break
+        }
+    }
+
+    return count
+}
+~~~
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ num:Int) -> Int {
+    var n = num
+    var count = 0
+    while n != 1 {
+        n = (n % 2 == 0) ? n / 2 : n * 3 + 1
+        count += 1
+
+        if count > 500 {
+            return -1
         }
     }
 
