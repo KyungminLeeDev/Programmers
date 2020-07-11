@@ -58,6 +58,8 @@ func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
 
 ## 제출한 코드  
 
+### 처음 제출한 코드 
+
 ~~~swift
 func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
     var result: [Int] = [-1]
@@ -73,5 +75,15 @@ func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
     }
 
     return result.sorted()
+}
+~~~
+
+### 다시 푼 코드
+
+~~~swift
+func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
+    let result = arr.filter{$0 % divisor == 0}.sorted()
+
+    return result.count > 0 ? result : [-1]
 }
 ~~~
